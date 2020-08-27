@@ -4,6 +4,6 @@ describe('Heading text Jad first test', () => {
 
         cy.get('h1')
             .invoke('text')
-            .should('equal', 'Awesome Web Application');
+            .should('equal', 'My Awesome Web Application');
     });
 });

@@ -8,7 +8,7 @@ node {
 stage('test') {
      def myTestContainer = docker.image('cypress/included:4.1.0')
      myTestContainer.pull()
-     myTestContainer.inside("-v cypress/:cypress/ -v cypress.json:cypress.json --entrypoint=''") {
+     myTestContainer.inside("-v /cypress:cypress/ -v /cypress.json:/cypress.json --entrypoint=''") {
        sh 'npx cypress run --spec "cypress/integration/first_test.spec.js"'
      }
    }

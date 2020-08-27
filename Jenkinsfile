@@ -10,8 +10,7 @@ stage('test') {
      myTestContainer.pull()
      myTestContainer.inside("-v /e2e-cypress/cypress:/cypress -v /e2e-cypress/cypress.json:/cypress.json --entrypoint=''") {
        sh 'npm install'
-       sh 'cypress run'
-       sh 'npx cypress run --spec "cypress/integration/first_test.spec.js"'
+       sh 'cypress run --spec "cypress/integration/first_test.spec.js"'
      }
    }
 }
